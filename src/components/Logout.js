@@ -1,8 +1,11 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {useDispatch} from 'react-redux';
+import {logout} from '../actions'
 
-function Logout(props) {
-    props.setloggedIn(false);
+function Logout() {
+    const dispatch = useDispatch();
+    dispatch(logout());
         return (
             <div className="container">
             <div className="jumbotron">
@@ -10,7 +13,7 @@ function Logout(props) {
                 <p className="lead">Login again to continue.</p>
                 <hr className="my-4" />
                 <p className="lead">
-                <Link to="/login" className="col-3"><button className="btn btn-warning btn-lg" href="#" role="button">Login!</button></Link>
+                <Link to="/login" className="col-3"><button className="btn btn-warning btn-lg">Login!</button></Link>
                 </p>
             </div>
             </div>
